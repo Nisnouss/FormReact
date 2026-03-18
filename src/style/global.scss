@@ -111,11 +111,19 @@ body{
         border-radius: 8px;
         text-align: center;
         margin-top: 15px;
+        &:hover{
+            background-color: $darkgrey;
+            transition: all 0.3s ease-in-out;
+        }
         button{
             color: $white;
             border: none;
-            background-color: $green;
+            background-color: transparent;
             cursor: pointer;
+        }
+        button:hover{
+            background-color: $darkgrey;
+            transition: all 0.3s ease-in-out;
         }
         button:disabled{
             cursor: not-allowed;

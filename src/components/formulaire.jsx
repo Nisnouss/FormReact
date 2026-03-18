@@ -23,6 +23,7 @@ function Formulaire(){
                     <div className='title'>
                         <h1>Contact Us</h1>
                     </div>
+
                     <div className='namediv'>
                         <article className='name-input'>
                             <article className='name-style'>
@@ -39,11 +40,13 @@ function Formulaire(){
                             <ErrorMessage name='lastName' component='div' className='error' />
                         </article>
                     </div>
+
                     <div className='maildiv'>
                         <label>Email Address <span>*</span></label>
                         <Field type="email" name="emailAddress" className="border-style" />
                         <ErrorMessage name="emailAddress" component="div" className='error' />
                     </div>
+
                     <div className='querydiv'>
                         <article className='query-title'>
                             <label>Query Type <span>*</span></label>
@@ -63,16 +66,19 @@ function Formulaire(){
                             <ErrorMessage name="checkboxSup" component="div" className='error'/>
                         </article>
                     </div>
+
                     <div className='msgdiv'>
                         <label>Message <span>*</span></label>
                         <Field type="message" name="message" className="border-style_msg"/>
                         <ErrorMessage name='message' component='div' className='error' />
                     </div>
+
                     <div className='checkdiv'>
                         <Field type="checkbox" name="checkboxContact" id="check-style"/>
                         <label htmlFor="contact">I consent to being contacted by the team <span>*</span></label>
                     </div>
                         <ErrorMessage name="checkboxContact" component="div" className='error'/>
+                        
                     <div className='btndiv'>
                         <button type="submit" disabled={isSubmitting}>Submit</button>
                     </div>
