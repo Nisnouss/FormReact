@@ -1,0 +1,28 @@
+@import './variables';
+
+body{
+    background-color: $lightgreen;
+}
+
+#formContact{
+    display: grid;
+    justify-self: center;
+    border: 1px solid $white;
+    background-color: $white;
+    width: fit-content;
+    border-radius: 16px;
+    padding: 20px 15px;
+}
+
+.namediv, .maildiv, .querydiv, .msgdiv{
+    display: grid;
+}
+
+.query-check{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.name-art{
+    
+}
