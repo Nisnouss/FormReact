@@ -9,7 +9,6 @@ const validateInfos = Yup.object().shape({
     checkboxSup: Yup.boolean().oneOf([true], "Vous devez cocher cette case"),
     message: Yup.string().required("Ce champ est requis"),
     checkboxContact: Yup.boolean().oneOf([true], "Vous devez cocher toutes les cases")
-
 })
 
 function Formulaire(){
@@ -25,18 +24,24 @@ function Formulaire(){
                         <h1>Contact Us</h1>
                     </div>
                     <div className='namediv'>
-                        <article className='name-art'>
-                            <label>First Name <span>*</span></label>
-                            <Field type="text" name="firstName"/>
+                        <article className='name-input'>
+                            <article className='name-style'>
+                                <label>First Name <span>*</span></label>
+                                <Field type="text" name="firstName" className="border-style"/>
+                            </article>
+                            <article className='name-style'>
+                                <label>Last Name <span>*</span></label>
+                                <Field type="text" name="lastName" className="border-style" />
+                            </article>
+                        </article>
+                        <article className='error-art'>
                             <ErrorMessage name='firstName' component='div' className='error' />
-                            <label>Last Name <span>*</span></label>
-                            <Field type="text" name="lastName"/>
                             <ErrorMessage name='lastName' component='div' className='error' />
                         </article>
                     </div>
                     <div className='maildiv'>
                         <label>Email Address <span>*</span></label>
-                        <Field type="email" name="emailAddress" />
+                        <Field type="email" name="emailAddress" className="border-style" />
                         <ErrorMessage name="emailAddress" component="div" className='error' />
                     </div>
                     <div className='querydiv'>
@@ -45,26 +50,29 @@ function Formulaire(){
                         </article>
                         <article className='query-check'>
                             <article className='border-check'>
-                                <Field type="checkbox" name="checkboxGen"/>
+                                <Field type="checkbox" name="checkboxGen" id="check-style"/>
                                 <label htmlFor="generalEnq">General Enquiry</label>
-                                <ErrorMessage name="checkboxGen" component="div" className='error'/>
                             </article>
                             <article className='border-check'>
-                                <Field type="checkbox" name="checkboxSup" />
+                                <Field type="checkbox" name="checkboxSup" id="check-style" />
                                 <label htmlFor="support">Support Request</label>
-                                <ErrorMessage name="checkboxSup" component="div" className='error'/>
                             </article>
+                        </article>
+                        <article className='error-art'>
+                            <ErrorMessage name="checkboxGen" component="div" className='error'/>
+                            <ErrorMessage name="checkboxSup" component="div" className='error'/>
                         </article>
                     </div>
                     <div className='msgdiv'>
                         <label>Message <span>*</span></label>
-                        <Field type="message" name="message" />
+                        <Field type="message" name="message" className="border-style_msg"/>
+                        <ErrorMessage name='message' component='div' className='error' />
                     </div>
                     <div className='checkdiv'>
-                        <Field type="checkbox" name="checkboxContact" />
+                        <Field type="checkbox" name="checkboxContact" id="check-style"/>
                         <label htmlFor="contact">I consent to being contacted by the team <span>*</span></label>
-                        <ErrorMessage name="checkboxContact" component="div" className='error'/>
                     </div>
+                        <ErrorMessage name="checkboxContact" component="div" className='error'/>
                     <div className='btndiv'>
                         <button type="submit" disabled={isSubmitting}>Submit</button>
                     </div>

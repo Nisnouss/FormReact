@@ -1,28 +1,174 @@
 @import './variables';
 
-body{
-    background-color: $lightgreen;
+*{
+    margin: 0;
 }
 
+body{
+    background-color: $lightgreen;
+    font-family: $fontkarla;
+    color: $darkgrey;
+    .title{
+        margin-bottom: 15px;
+        h1{
+            color: $darkgrey;
+        }
+    }
+}
+
+
 #formContact{
+    margin: 20px auto;
     display: grid;
     justify-self: center;
     border: 1px solid $white;
     background-color: $white;
-    width: fit-content;
+    width: 600px;
     border-radius: 16px;
-    padding: 20px 15px;
-}
-
-.namediv, .maildiv, .querydiv, .msgdiv{
-    display: grid;
-}
-
-.query-check{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.name-art{
+    padding: 20px 25px;
+    .namediv, .maildiv, .querydiv, .msgdiv{
+        display: grid;
+        gap: 10px;
+    }
+    .query-check{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
     
+    .name-input{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        .name-style{
+            display: grid;
+            grid-template-rows: 0,2fr 0,2fr;
+            gap: 10px;
+        }
+    }
+    
+    input{
+        margin-bottom: 15px;
+    }
+
+    .border-style{
+        border: 1px solid $darkgrey;
+        border-radius: 8px;
+        padding: 13px 8px;
+    }
+    
+    .border-check{
+        border: 1px solid $darkgrey;
+        border-radius: 8px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+
+    .border-style_msg{
+        border: 1px solid $darkgrey;
+        border-radius: 8px;
+        padding: 10px 15px;
+        height: 100px;
+    }
+    
+    .checkdiv{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    #check-style{
+        border-radius: 20px;
+        width: 1.3em;
+        height: 1.3em;
+        background-color: $white;
+        border-radius: 50%;
+        vertical-align: middle;
+        border: 1px solid $lightgrey;
+        appearance: none;
+        -webkit-appearance: none;
+        outline: none;
+        cursor: pointer;
+        margin-bottom: 0;
+    }
+    
+    #check-style:checked{
+        background-color: $lightgrey;
+    }
+
+    .btndiv{
+        border: 1px solid $green;
+        background-color: $green;
+        padding: 10px 15px;
+        border-radius: 8px;
+        text-align: center;
+        margin-top: 15px;
+        button{
+            color: $white;
+            border: none;
+            background-color: $green;
+            cursor: pointer;
+        }
+        button:disabled{
+            cursor: not-allowed;
+        }
+    }
+    
+    span{
+        color: $green;
+    }
+
+    .error{
+        color: $red;
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+    
+    .error-art{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
+
+@media screen and (max-width: 767px) {
+    #formContact {
+        width: 240px !important; 
+        margin: 20px auto;
+        display: block;
+    }
+
+    .name-input {
+        display: grid !important; 
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    .query-check {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+    }
+
+    .name-style,
+    .border-style, 
+    .border-style_msg, 
+    .maildiv input,
+    .border-check {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .error-art {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+
+
+
